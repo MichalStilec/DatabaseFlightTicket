@@ -1,14 +1,14 @@
 # Praktická maturitní zkouška
-
-**Střední průmyslová škola elektrotechnická, Praha 2, Ječná 30**
-**Školní rok 2023/2024**
 ---
-Jméno a příjimeni: Michal Štilec
-Třída: C4b
+### Střední průmyslová škola elektrotechnická, Praha 2, Ječná 30
+### Školní rok 2023/2024**
+### Jméno a příjimeni: Michal Štilec
+### Třída: C4b
 ---
 
 
 ## Úvod
+- Databáze eviduje letenky pro společnost Sky Airlines
 - Problém jsem se rozhodl řešit v MSSQL Server
 - Jako návrhové prostředí jsem využil Oracle DataModeler
 
