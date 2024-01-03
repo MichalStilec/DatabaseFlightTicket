@@ -115,21 +115,20 @@ Let:
 
 
 ## Požadavky na spuštění
-př:
-- Oracle DataModeler, rok vydání 2014 a více ... 
-- MSSQL Server, rok vydání 2014 a více ... 
-- připojení k internetu alespoň 2Mb/s ...
+- Software  SQL Server Management Studio (MSSQL), verze 2014 a novější
+- Stáhnutá struktura a nejlépe i data ze složky /sql
+- Znalost práce v MSSQL pro následné používání dat
 
 
 
 ## Návod na instalaci a ovládání aplikace
-př:
-Uživatel by si měl vytvořit databázi a nahrát do ní strukturu, dle kroku "Import struktury databáze 
-a dat od zadavatele" ...
-Poté se přihlásit předdefinovaným uživatelem, nebo si vytvořit vlastního pomocí SQL příkazů ...
-Měl by upravit konfigurační soubor klientské aplikace, aby odpovídal jeho podmínkám ...
-Dále nahrát obsah složky src na server a navštívit adresu serveru ... 
-Přihlásit se a může začít pracovat ... 
+Instalace
+- Uživatel by si měl vytvořit databázi a nahrát do ní strukturu, dle kroku "Import struktury databáze  a dat od zadavatele"
+- Následně naimportovat data znovu dle "Import struktury databáze  a dat od zadavatele"
+
+Ovládání
+- Struktura má již pod Pohledem, Transakcí, ... již vytvořené příkazy Select pro otestování
+- Data mají pod přidáním příkazy Select pro vypsání všech dat
 
 
 
