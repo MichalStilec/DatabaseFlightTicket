@@ -21,59 +21,58 @@ Třída: C4b
 
 
 ## Entitní integrita
-Každá entita obsahuje uměle vytvořený primární klíč, označený jako `ID`,  který se s každým dalším záznamem inkrementuje.
-ID se následně používá pro efektivní vyhledávání dat, a  pro jedinečnost záznamu.
+- Každá entita obsahuje uměle vytvořený primární klíč, označený jako `ID`,  který se s každým dalším záznamem inkrementuje.
+- ID se následně používá pro efektivní vyhledávání dat, a  pro jedinečnost záznamu.
 
 
 
 ## Doménová integrita
-Cestujici:
-	Jmeno: Atribut nesmí být bez hodnoty, omezeno minimální délkou 3 znaky, maximální délka 30 znaků, datový typ varchar (libovolný znaky).
-	Prijmeni: Atribut nesmí být bez hodnoty, omezeno minimální délkou 3 znaky, maximální délka 30 znaků, datový typ varchar (libovolný znaky).
-	Datum_nar: Atribut nesmí být bez hodnoty, datový typ date, formát 'yyyy-mm-dd'
-	Adresa: Atribut nesmí být bez hodnoty, maximální délka 60 znaků, datový typ varchar (libovolný znaky).
-	Telefon: Atribut nesmí být bez hodnoty, maximální délka 20 znaků, datový typ varchar (libovolný znaky).
+### Cestujici:
+- Jmeno: Atribut nesmí být bez hodnoty, omezeno minimální délkou 3 znaky, maximální délka 30 znaků, datový typ varchar (libovolný znaky).
+- Prijmeni: Atribut nesmí být bez hodnoty, omezeno minimální délkou 3 znaky, maximální délka 30 znaků, datový typ varchar (libovolný znaky).
+- Datum_nar: Atribut nesmí být bez hodnoty, datový typ date, formát 'yyyy-mm-dd'
+- Adresa: Atribut nesmí být bez hodnoty, maximální délka 60 znaků, datový typ varchar (libovolný znaky).
+- Telefon: Atribut nesmí být bez hodnoty, maximální délka 20 znaků, datový typ varchar (libovolný znaky).
 
-Letadlo:
-	Typ_letadla: Výchozí hodnota nastavena na 'Dopravni', datový typ varchar (libovolný znaky).
-	Kapacita_cestujich: Atribut nesmí být bez hodnoty, datový typ int (pouze celá čísla).
-	Maximalni_dolet_km: Atribut nesmí být bez hodnoty, datový typ int (pouze celá čísla).
-	Velikost_nadrze_l: Atribut nesmí být bez hodnoty, datový typ int (pouze celá čísla).
+### Letadlo:
+- Typ_letadla: Výchozí hodnota nastavena na 'Dopravni', datový typ varchar (libovolný znaky).
+- Kapacita_cestujich: Atribut nesmí být bez hodnoty, datový typ int (pouze celá čísla).
+- Maximalni_dolet_km: Atribut nesmí být bez hodnoty, datový typ int (pouze celá čísla).
+- Velikost_nadrze_l: Atribut nesmí být bez hodnoty, datový typ int (pouze celá čísla).
 
-Destinace:
-	Stat, Mesto, Letiste: Omezeny minimální délkou 3 znaky.
-	GPS: Atribut nesmí být bez hodnoty
-	Popis: Atribut nesmí být bez hodnoty
+### Destinace:
+- Stat, Mesto, Letiste: Omezeny minimální délkou 3 znaky.
+- GPS: Atribut nesmí být bez hodnoty
+- Popis: Atribut nesmí být bez hodnoty
 
-Let:
-	Nazev_letu: Atribut nesmí být bez hodnoty, maximální délka 40 znaků, datový typ varchar (libovolný znaky).
-	Datum_odletu, Datum_priletu: Atribut nesmí být bez hodnoty, datový typ datetime, formát 'yyyy-mm-dd hh-mm-ss'.
-	Cas_nastoupeni_do: Atribut nesmí být bez hodnoty, datový typ time, formát 'hh-mm-ss'.
+### Let:
+- Nazev_letu: Atribut nesmí být bez hodnoty, maximální délka 40 znaků, datový typ varchar (libovolný znaky).
+- Datum_odletu, Datum_priletu: Atribut nesmí být bez hodnoty, datový typ datetime, formát 'yyyy-mm-dd hh-mm-ss'.
+- Cas_nastoupeni_do: Atribut nesmí být bez hodnoty, datový typ time, formát 'hh-mm-ss'.
 
-Letenka:
-	Cena: Atribut nesmí být bez hodnoty, cena je kontrolována aby byla vždy větší než 0, datový typ int (pouze celá čísla).
-	Sedadlo, Brana_odletu: Atribut nesmí být bez hodnoty, maximální délka 20 znaků, datový typ varchar (libovolný znaky).
+### Letenka:
+- Cena: Atribut nesmí být bez hodnoty, cena je kontrolována aby byla vždy větší než 0, datový typ int (pouze celá čísla).
+- Sedadlo, Brana_odletu: Atribut nesmí být bez hodnoty, maximální délka 20 znaků, datový typ varchar (libovolný znaky).
 
-Rezervace:
-	Datum_rezervace: Atribut nesmí být bez hodnoty, datový typ date, formát 'yyyy-mm-dd'
-	Stav_rezervace: Atribut nesmí být bez hodnoty, maximální délka 20 znaků, datový typ varchar (libovolný znaky).
+### Rezervace:
+- Datum_rezervace: Atribut nesmí být bez hodnoty, datový typ date, formát 'yyyy-mm-dd'
+- Stav_rezervace: Atribut nesmí být bez hodnoty, maximální délka 20 znaků, datový typ varchar (libovolný znaky).
 
 
 
 ## Referenční integrita
-** Návrh obsahuje několik cizích klíčů, které jsou uvedeny níže
+#### Návrh obsahuje několik cizích klíčů, které jsou uvedeny níže
+### Rezervace:
+- Cestujici_ID: Cizí klíč odkazující na tabulku Cestujici, atribut nesmí být bez hodnoty.
+- Letenka_ID: Cizí klíč odkazující na tabulku Letenka, atribut nesmí být bez hodnoty.
 
-Rezervace:
-	Cestujici_ID: Cizí klíč odkazující na tabulku Cestujici, atribut nesmí být bez hodnoty.
-	Letenka_ID: Cizí klíč odkazující na tabulku Letenka, atribut nesmí být bez hodnoty.
+### Letenka:
+- Let_ID: Cizí klíč odkazující na tabulku Let, atribut nesmí být bez hodnoty.
 
-Letenka:
-	Let_ID: Cizí klíč odkazující na tabulku Let, atribut nesmí být bez hodnoty.
-
-Let:
-	Destinace_Od_ID: Cizí klíč odkazující na tabulku Destinace, atribut nesmí být bez hodnoty.
-	Destinace_Do_ID: Cizí klíč odkazující na tabulku Destinace, atribut nesmí být bez hodnoty.
-	Letadlo_ID: Cizí klíč odkazující na tabulku Letadlo, atribut nesmí být bez hodnoty.
+### Let:
+- Destinace_Od_ID: Cizí klíč odkazující na tabulku Destinace, atribut nesmí být bez hodnoty.
+- Destinace_Do_ID: Cizí klíč odkazující na tabulku Destinace, atribut nesmí být bez hodnoty.
+- Letadlo_ID: Cizí klíč odkazující na tabulku Letadlo, atribut nesmí být bez hodnoty.
 
 
 
@@ -122,11 +121,11 @@ Let:
 
 
 ## Návod na instalaci a ovládání aplikace
-Instalace
+### Instalace
 - Uživatel by si měl vytvořit databázi a nahrát do ní strukturu, dle kroku "Import struktury databáze  a dat od zadavatele"
 - Následně naimportovat data znovu dle "Import struktury databáze  a dat od zadavatele"
 
-Ovládání
+### Ovládání
 - Struktura má již pod Pohledem, Transakcí, ... již vytvořené příkazy Select pro otestování
 - Data mají pod přidáním příkazy Select pro vypsání všech dat
 
