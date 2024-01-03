@@ -111,6 +111,23 @@
 
 ![image](https://github.com/MichalStilec/DatabaseFlightTicket/assets/113086016/93cf628e-05c9-4a67-a2ea-30e6b3e45073)
 
+## Zálohování
+- Zálohování je proces vytváření a uchovávání kopie důležitých dat s cílem zajištění jejich obnovení v případě ztráty, poškození nebo jiných nepředvídatelných událostí.
+- Tímto procesem se minimalizuje riziko datové ztráty a přispívá se k obnovitelnosti systémů a informací.
+### Plné zálohování (Full Backup):
+Full backup ukládá všechna data včetně struktury. Musí být vytvořen jako první záloha. Lze vytvořit následovně:
+
+```
+BACKUP DATABASE <NazevDatabaze> TO DISK = '<Cesta kam chcete uložit soubor\nazevsouboru.bak>' WITH INIT;
+```
+
+### Diferenciální zálohování (Differential Backup):
+Differential backup ukládá pouze změněná data dle full backupu. Nesmí být vytvořen jako první záloha. Lze vytvořit následovně:
+
+```
+BACKUP DATABASE <NazevDatabaze> TO DISK = '<Cesta kam chcete uložit soubor\nazevsouboru.bak>' WITH DIFFERENTIAL;
+```
+
 ## Nastavení uživatelských oprávnění
 Protože k upravení a celkovému vytvoření mé databáze používám databázové servery Microsoft SQL Server, které provozuje škola SPŠE Ječná, tak nemohu nijak vytvářet LOGINY ani USERY.
 Z toho důvodu se v této části pokusím teoreticky popsat, jak bych postupoval, pokud bych měl možnost vytvářet LOGINY, USERY a zároveň jak bych pracoval s uživatelskými oprávněními.
