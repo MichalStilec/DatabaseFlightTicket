@@ -12,7 +12,8 @@
 - Problém jsem se rozhodl řešit v MSSQL Server
 - Jako návrhové prostředí jsem využil Oracle DataModeler
 
-
+## Předloha
+![letenka](https://github.com/MichalStilec/DatabaseFlightTicket/assets/113086016/43d36c69-94ca-4dc0-86a8-ee478ac1d90a)
 
 ## E-R model
 - logický model databáze se nachází ve složce img a jmenuje se Logical.png
