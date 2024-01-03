@@ -111,6 +111,40 @@
 
 ![image](https://github.com/MichalStilec/DatabaseFlightTicket/assets/113086016/93cf628e-05c9-4a67-a2ea-30e6b3e45073)
 
+## Nastavení uživatelských oprávnění
+Protože k upravení a celkovému vytvoření mé databáze používám databázové servery Microsoft SQL Server, které provozuje škola SPŠE Ječná, tak nemohu nijak vytvářet LOGINY ani USERY.
+Z toho důvodu se v této části pokusím teoreticky popsat, jak bych postupoval, pokud bych měl možnost vytvářet LOGINY, USERY a zároveň jak bych pracoval s uživatelskými oprávněními.
+
+### Login
+Login jsou přihlašovací údaje, přes které se následně připojuje do serveru
+```
+CREATE LOGIN <NazevLoginu>
+WITH PASSWORD = <HesloLoginu>;
+```
+
+### User
+User se přiděluje k loginu a má různé oprávnění
+```
+CREATE USER <NazevUsera> FOR LOGIN <NazevLoginu>;
+```
+
+### Role
+Role je skupina oprávnění, která jsou následně přidělována uživatelům
+```
+CREATE ROLE <NazevRole>;
+```
+
+### Přidělení role schématu
+Tento příkaz přidělí roli oprávnění pro dané schéma, v tomto příkladu přiděluji například Select
+```
+GRANT SELECT ON SCHEMA :: <NazevSchematu> TO <NazevRole>;
+```
+
+### Přidělení role na konkrétní objekt
+Pokud nechci nastavovat práva pro celý schéma, tak je možnost také udělovat práva na konkretní objekty
+```
+GRANT SELECT ON <NazevTabulky> TO <NazevRole>;
+```
 
 
 ## Import struktury databáze a dat od zadavatele
