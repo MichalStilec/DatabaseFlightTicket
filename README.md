@@ -1,7 +1,7 @@
 # Praktická maturitní zkouška
 ---
 ### Střední průmyslová škola elektrotechnická, Praha 2, Ječná 30
-### Školní rok 2023/2024**
+### Školní rok 2023/2024
 ### Jméno a příjimeni: Michal Štilec
 ### Třída: C4b
 ---
@@ -16,8 +16,12 @@
 
 ## E-R model
 - logický model databáze se nachází ve složce img a jmenuje se Logical.png
+
+![Logical](https://github.com/MichalStilec/DatabaseFlightTicket/assets/113086016/3815bf36-7c9e-43c1-8194-c98671fcc256)
+
 - relační model databáze se také nachází ve složce img a jmenuje se Relational.png
 
+![Relational](https://github.com/MichalStilec/DatabaseFlightTicket/assets/113086016/a83050a6-95e0-402f-bbd4-0f3b4b956d23)
 
 
 ## Entitní integrita
@@ -84,20 +88,28 @@
 ## Pohledy
 - Návrh obsahuje pohledy na data o rezervacích a letech, které spojují informace o letech, cestujících a rezervacích. Pohled FlightReservationView kombinuje informace o letech, cestujících a rezervacích.
 
+![image](https://github.com/MichalStilec/DatabaseFlightTicket/assets/113086016/c0d374db-be03-41c3-abb3-6ea4fd40bb72)
+
 
 
 ## Triggery
 - Databáze obsahuje trigger UpdateReservationStatus, který automaticky aktualizuje stav rezervace na 'Confirmed' po přidání nové rezervace.
+
+![image](https://github.com/MichalStilec/DatabaseFlightTicket/assets/113086016/812c3df5-fa51-4b04-bc4e-52ca39ab92a2)
 
 
 
 ## Procedury
 - Databáze obsahuje proceduru GetReservationDetails, která načítá informace o konkrétní rezervaci letu spolu s údaji o cestujícím.
 
+![image](https://github.com/MichalStilec/DatabaseFlightTicket/assets/113086016/fa38708c-7cfe-4002-abad-ea10bf252803)
+
 
 
 ## Transakce
 - Databáze obsahuje transakci, která vloží nového cestujícího, nový let a novou rezervaci letenky do tabulek Cestujici, Let, Letenka, a Rezervace. Transakce zahrnuje kontrolu chyb a provádí rollback v případě chyby.
+
+![image](https://github.com/MichalStilec/DatabaseFlightTicket/assets/113086016/93cf628e-05c9-4a67-a2ea-30e6b3e45073)
 
 
 
@@ -132,9 +144,4 @@
 
 
 ## Závěr
-př:
-Tento systém by po menších úpravách mohl být převeden na jiný databázový systém, 
-klientská aplikace není zabezpečená, 
-počítá se s tím, že klient byl proškolen o používání této aplikace ...
-Nepodařilo se dořešit ...
-Pro další vývoj aplikace by bylo vhodné ...
+### Celkově by měla být tato databáze využívána pro rezervační systém leteckých letů s možností sledování rezervací, letů, cestujících a dalších souvisejících informací.
