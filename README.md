@@ -86,7 +86,10 @@
 - Dále jsou vytvořené dva indexy pro lepší vyhledávání
   * RezervaceCestujiciho_ID = zrychluje dotazy, které vyhledávají rezervace na základě identifikátoru cestujícího
   * LetOdDo_ID = zrychluje dotazy, které vyhledávají lety podle odjezdu a příjezdu.
-
+Indexy jdou jednoduše vytvořit následovně
+```
+CREATE INDEX <NazevIndexu> ON <NazevTabulky> (<Atribut/y>);
+```
 
 ## Pohledy
 - Návrh obsahuje pohledy na data o rezervacích a letech, které spojují informace o letech, cestujících a rezervacích. Pohled FlightReservationView kombinuje informace o letech, cestujících a rezervacích.
