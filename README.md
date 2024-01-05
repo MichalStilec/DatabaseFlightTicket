@@ -9,7 +9,7 @@
 
 ## Úvod
 - Databáze eviduje letenky pro společnost Sky Airlines
-- Problém jsem se rozhodl řešit v MSSQL Server na školním serveru
+- Problém jsem se rozhodl řešit v MSSQL Server na online školním serveru
 - Jako návrhové prostředí jsem využil Oracle DataModeler
 
 ## Předloha
