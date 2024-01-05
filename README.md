@@ -83,7 +83,9 @@
 
 ## Indexy 
 - Databáze má pro každou entitu pouze indexy vytvořené pro primární klíče.
-
+- Dále jsou vytvořené dva indexy pro lepší vyhledávání
+  * RezervaceCestujiciho_ID = zrychluje dotazy, které vyhledávají rezervace na základě identifikátoru cestujícího
+  * LetOdDo_ID = zrychluje dotazy, které vyhledávají lety podle odjezdu a příjezdu.
 
 
 ## Pohledy
