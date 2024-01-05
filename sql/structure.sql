@@ -159,6 +159,14 @@ BEGIN CATCH
 END CATCH;
 
 
+-- Tento index může zrychlit dotazy, které vyhledávají rezervace na základě identifikátoru cestujícího
+CREATE INDEX idx_Rezervace_Cestujici_ID ON Rezervace (Cestujici_ID);
+
+-- Tento index může zrychlit dotazy, které vyhledávají lety podle odjezdu a příjezdu.
+CREATE INDEX idx_Let_Destinace ON Let (Destinace_Od_ID, Destinace_Do_ID);
+
+
+
 -- Vypíše jméno a příjmení cestujících seřazených abecedně od konce
 Select Jmeno, Prijmeni from Cestujici order by Prijmeni desc;
 
